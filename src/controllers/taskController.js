@@ -10,3 +10,9 @@ export async function createTask(req, res, next) {
   const task = await taskService.createTask({ title, completed });
   res.status(201).json(task);
 }
+
+export async function getTaskById(req, res, next) {
+  const { id } = req.body;
+  const task = await taskService.getTask({id});
+  res.status(201).json(task);
+}

@@ -18,3 +18,11 @@ export const validateTask = [
 
   checkValidationResults,
 ];
+
+export const validateGet = [
+  body('id')
+    .isInt({ min: 1 })
+    .withMessage('Category ID must be a positive integer'),
+  checkValidationResults
+];
+
