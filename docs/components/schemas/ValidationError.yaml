@@ -1,0 +1,9 @@
+type: object
+properties:
+  error:
+    type: string
+    example: Validation failed
+  details:
+    array: null
+    items:
+      type: string
