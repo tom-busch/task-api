@@ -12,6 +12,7 @@ export async function createTask(req, res, next) {
 }
 
 export async function getTaskById(req, res, next) {
+  console.log("hello");
   let id = parseInt(req.params.id);
   let category = await getTask(id);
   res.status(200).json(category);
