@@ -49,7 +49,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Task'
+              $ref: '#/components/schemas/NewTask'
       responses:
         '201':
           description: Task created successfully
@@ -68,6 +68,17 @@ components:
           readOnly: true
           type: integer
           example: 1
+        title:
+          type: string
+          example: Buy groceries
+        completed:
+          type: boolean
+          example: false
+    NewTask:
+      type: object
+      required:
+        - title
+      properties:
         title:
           type: string
           example: Buy groceries

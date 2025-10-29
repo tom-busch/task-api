@@ -11,6 +11,14 @@ export async function create(data) {
   });
 }
 
-export async function findById(id) {
-  return prisma.task.findUnique(id);
+export async function getById(id) {
+  const task = await prisma.category.findUnique({
+    where: { id },
+    select: {
+      id: true,
+      title: true,
+      completed: true,
+    }
+  });
+  return task;
 }

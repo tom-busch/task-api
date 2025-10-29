@@ -1,4 +1,4 @@
-import { body } from 'express-validator';
+import { param, query, body } from 'express-validator';
 import { checkValidationResults } from './handleValidationErrors.js';
 
 export const validateTask = [
@@ -20,9 +20,9 @@ export const validateTask = [
 ];
 
 export const validateGet = [
-  body('id')
+  param('id')
     .isInt({ min: 1 })
     .withMessage('Category ID must be a positive integer'),
-  checkValidationResults
+  checkValidationResults,
 ];
 

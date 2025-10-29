@@ -9,5 +9,10 @@ export async function createTask(newTask) {
 }
 
 export async function getTask(id) {
-  return taskRepository.findById(id);
+  let result = await getById(id);
+  if (result) return result;
+  else {
+    const error = new Error(`Cannot find task with id ${id}`);
+    error.status = 404;
+  }
 }
